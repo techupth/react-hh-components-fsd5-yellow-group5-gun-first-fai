@@ -1,7 +1,8 @@
 import "./App.css";
-
+import React from 'react';
 function App() {
-  return (
+function Header() { 
+ return (  
     <div>
       {/*
         Todo: 1 ให้ Declare ตัว Component ย่อย 
@@ -31,6 +32,10 @@ function App() {
         Todo 2: ให้ Declare ตัว Component ย่อย
         เพื่อแบ่งสัดส่วนของ HTML Element ในส่วนของ <main> 
       */}
+  );
+}
+function MainContent() {
+  return (
       <main>
         <div className="company-detail-left">
           <h1>Welcome to XYZ Corp</h1>
@@ -60,11 +65,18 @@ function App() {
           <button className="learn-button">Learn More</button>
         </div>
       </main>
+  );
+}
 
+export default Main;
       {/*
         Todo 3: ให้ Declare ตัว Component ย่อย
         เพื่อแบ่งสัดส่วนของ HTML Element ในส่วนของ <section className="product-section"> 
       */}
+import React from 'react';
+
+function ProductSection() {
+  return (
       <section className="product-section">
         <div className="product-section-container">
           <h2 className="product-featured-heading">Featured Products</h2>
@@ -110,16 +122,59 @@ function App() {
           </div>
         </div>
       </section>
-
+  );
+}
+export default ProductSection;
+  
       {/*
         Todo 4: ให้ Declare ตัว Component ย่อย
         เพื่อแบ่งสัดส่วนของ HTML Element ในส่วนของ <footer> 
       */}
+import React from 'react';
+
+function Footer() {
+  return (
       <footer>
         <p>&copy; 2023 Your Ecommerce Store. All rights reserved.</p>
       </footer>
     </div>
   );
 }
+export default Footer;
+
+import React from 'react';
+
+function Button({ className, children }) {
+  return (
+    <button className={className}>
+      {children}
+    </button>
+  );
+}
+
+export default Button;
+
+import React from 'react';
+import Header from './HeaderComponent';
+import Main from './MainComponent';
+import ProductSection from './ProductSectionComponent';
+import Footer from './FooterComponent';
+import Button from './ButtonComponent';
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <Main />
+      <ProductSection />
+      {/* Replace repetitive buttons with the Button component */}
+      <Button className="add-to-cart-button">Add to Cart</Button>
+      <Button className="add-to-cart-button">Add to Cart</Button>
+      <Button className="add-to-cart-button">Add to Cart</Button>
+      <Footer />
+    </div>
+  );
+}
 
 export default App;
+
